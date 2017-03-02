@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UserDAOImpl extends BaseDAO<UserDO> implements UserDAO {
 
-    private static final String NAMESPACE = "UserDO";
+    private static final String NAMESPACE = "com.lee.demo.springmvc.common.dao.domain.UserDO";
 
     @Override
     public UserDO getUserByUid(Long uid) {

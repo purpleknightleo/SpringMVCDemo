@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class ApplicationDAOImpl extends BaseDAO<ApplicationDO> implements ApplicationDAO {
 
-    private static final String NAMESPACE = "ApplicationDO";
+    private static final String NAMESPACE = "com.lee.demo.springmvc.common.dao.domain.ApplicationDO";
 
     @Override
     public void insertRecord(ApplicationInfo applicationInfo) {
