@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lee.demo.springmvc.common.dao.domain.ApplicationDO">
+
+    <resultMap type="ApplicationDO"
+               id="applicationMap">
+        <!-- 用id属性来映射主键字段 -->
+        <id property="uid" column="uid"/>
+        <!-- 用result属性来映射非主键字段 -->
+        <result property="type" column="type"/>
+    </resultMap>
+
+    <!-- add a record -->
+    <insert id="insertRecord" parameterType="ApplicationDO">
+        INSERT INTO application (uid,type ) VALUES (#{uid},#{type})
+    </insert>
+
+</mapper>
+

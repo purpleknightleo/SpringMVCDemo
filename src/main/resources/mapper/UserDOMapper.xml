@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lee.demo.springmvc.common.dao.domain.UserDO">
+
+    <resultMap type="UserDO"
+               id="userMap">
+        <!-- 用id属性来映射主键字段 -->
+        <id property="uid" column="uid"/>
+        <!-- 用result属性来映射非主键字段 -->
+        <result property="name" column="name"/>
+        <result property="password" column="password"/>
+    </resultMap>
+
+    <!-- query a user by uid -->
+    <select id="getUserByUid" resultType="UserDO" parameterType="Long">
+		SELECT *
+		FROM user
+		WHERE  uid = #{uid}
+	</select>
+
+    <!-- add a user -->
+    <insert id="addUser" parameterType="UserDO">
+	INSERT INTO user (uid,name,password ) VALUES (#{uid},#{name}, #{password})
+	</insert>
+
+</mapper>
+
